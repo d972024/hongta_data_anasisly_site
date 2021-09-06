@@ -1,0 +1,61 @@
+{% load static %}
+{% load i18n %}
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% trans 'register' %}</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'Bootstrap4.6.0/bootstrap.css' %}">
+    <!-- Favicons -->
+    <!-- Custom styles for this template -->
+    <link href="{% static 'Css/form-validation.css' %}" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <link href="{% static 'Bootstrap4.6.0/floating-labels.css' %}" rel="stylesheet">
+</head>
+<body class="bg-light">
+<form class="form-signin" action="{% url 'identity:login' %}" method="POST">
+    {% csrf_token %}
+    <div class="text-center mb-4">
+        <img class="mb-4" src="{% static 'media/image/dlycLogo.png' %}" alt="" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">欢迎登陆经济运行门户.</h1>
+        <p class="lead"><small>站点主要功能包括：规范管理App、行业对标管理App及科内管理，相关内容我们将持续扩充，我们将持续深化“全市场化”理念，
+            以不断提升工厂管理水平为目标探索实践，实现突破.</small></p></div>
+
+    <div class="form-label-group">
+        {{ form.username }}
+        {% trans form.username.label_tag %}
+        {{ form.username.errors }}
+    </div>
+    <div class="form-label-group">
+        {{ form.password }}
+        {% trans form.password.label_tag %}
+    </div>
+    {{ form.password.errors }}
+
+    {{ form.non_field_errors }}
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
+    <input type="hidden" name="next" value="{{ next }}">
+    <p class="mt-5 mb-3 text-muted text-center">© 2021-2021</p>
+</form>
+<script src="{% static 'JS/jquery-3.6.0.js' %}"></script>
+<script src="{% static 'Bootstrap4.6.0/bootstrap.js' %}"></script>
+</body>
+</html>

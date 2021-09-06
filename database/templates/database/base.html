@@ -1,0 +1,62 @@
+{% load static %}
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'Bootstrap4.6.0/bootstrap.css' %}">
+
+
+</head>
+<body class="text-center">
+<div class="container">
+    <table class="table table-bordered">
+        <thead class="bi-align-middle">
+        <tr vertical-align="middle">
+            <th scope="col" rowspan="3">#</th>
+            <th scope="col" rowspan="3">First</th>
+            <th scope="col" rowspan="2" colspan="2">Row1</th>
+            <th scope="col" rowspan="1" colspan="4">Row2</th>
+        </tr>
+        <tr>
+            {#            <th scope="col" colspan="1">Row1-1</th>#}
+            {#            <th scope="col" colspan="1">Row1-2</th>#}
+            <th scope="col" colspan="2" rowspan="1">Row2-1</th>
+            <th scope="col" colspan="2" rowspan="1">Row2-2</th>
+        </tr>
+        <tr>
+            <th scope="col">Row1-1</th>
+            <th scope="col">Row1-2</th>
+            <th scope="col">Row2-1-1</th>
+            <th scope="col">Row2-1-2</th>
+            <th scope="col">Row2-2-1</th>
+            <th scope="col">Row2-2-2</th>
+
+        </tr>
+
+        </thead>
+        {#        <tbody>#}
+        {#        <tr>#}
+        {#            <th scope="row">1</th>#}
+        {#            <td>Mark</td>#}
+        {#            <td>Otto</td>#}
+        {#            <td>@mdo</td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <th scope="row">2</th>#}
+        {#            <td class="row-cols-2">Jacob</td>#}
+        {#            <td>Thornton</td>#}
+        {#            <td>@fat</td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <th scope="row">3</th>#}
+        {#            <td>Larry</td>#}
+        {#            <td>the Bird</td>#}
+        {#            <td>@twitter</td>#}
+        {#        </tr>#}
+        {#        </tbody>#}
+    </table>
+</div>
+</body>
+</html>

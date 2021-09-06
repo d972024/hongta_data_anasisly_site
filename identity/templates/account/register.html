@@ -1,0 +1,143 @@
+{% load static %}
+{% load i18n %}
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% trans 'register' %}</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'Bootstrap4.6.0/bootstrap.css' %}">
+    <!-- Favicons -->
+    <!-- Custom styles for this template -->
+    <link href="{% static 'Css/form-validation.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container">
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="{% static 'media/image/dlycLogo.png' %}" alt="" height="72">
+        <h2>经济运行科门户站点</h2>
+        <p class="lead">站点主要功能包括：规范管理App、行业对标管理App及科内管理，相关内容我们将持续扩充，我们将持续深化“全市场化”理念，
+            以不断提升工厂管理水平为目标探索实践，实现突破.</p>
+    </div>
+    <h4 class="mb-3">亲,请认真填报用户注册表单</h4>
+    <form class="needs-validation" novalidate="" action="{% url 'identity:register' %}" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-person-check-fill"></i></span>
+                    </div>
+                    {{ form.username }}
+                </div>
+                {{ form.username.errors }}
+                <div class="invalid-feedback" style="width: 100%;">
+                    用户名必须填写.
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ form.technology }}
+                {{ form.technology.errors }}
+                <div class="invalid-feedback">
+                    请填写8位员工号.
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="input-group">
+                <div class="input-group-prepend"><span class="input-group-text"><i
+                        class="bi bi-braces"></i></span></div>
+                {{ form.password1 }}
+            </div>
+            {{ form.password1.errors }}
+            <div class="invalid-feedback">
+                请填输入密码.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="input-group">
+                <div class="input-group-prepend"><span class="input-group-text"><i
+                        class="bi bi-check-circle-fill"></i></span></div>
+                {{ form.password2 }}
+            </div>
+            {{ form.password2.errors }}
+            <div class="invalid-feedback">
+                请再次输入密码.
+            </div>
+        </div>
+        <hr class="mb-4">
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                {{ form.first_name }}
+                {{ form.first_name.errors }}
+                <div class="invalid-feedback">
+                    请填写你真实的姓氏.
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                {{ form.last_name }}
+                {{ form.last_name.errors }}
+                <div class="invalid-feedback">
+                    请填写真实的名字.
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                {{ form.mobile }}
+                {{ form.mobile.errors }}
+                <div class="invalid-feedback">
+                    请填写11位有效的手机号.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                {{ form.department }}
+                {{ form.department.errors }}
+                <div class="invalid-feedback">
+                    请填写你所在的部门.
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                {{ form.jobs }}
+                {{ form.jobs.errors }}
+                <div class="invalid-feedback">
+                    请填写你的岗位或职务.
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                {{ form.email }}
+                {{ form.email.errors }}
+                <div class="invalid-feedback" style="width: 100%;">
+                    请填写你的电子邮箱.
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg btn-block" type="submit">提交注册信息</button>
+        <input type="hidden" name="next" value="{{ next }}">
+    </form>
+
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© 2017-2021 Company Name</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+</div>
+
+
+<script src="{% static 'JS/jquery-3.6.0.js' %}"></script>
+<script src="{% static 'Bootstrap4.6.0/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'JS/form-validation.js' %}"></script>
+
+
+</body>
+</html>

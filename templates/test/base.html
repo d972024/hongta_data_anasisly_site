@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}
+
+    {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'Bootstrap4.6.0/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'BootstrapTable/bootstrap-table.css' %}">
+    <script src="{% static 'JS/jquery-3.6.0.js' %}"></script>
+    <script src="{% static 'JS/all.js' %}"></script>
+    <script src="{% static 'JS/popper.min.js' %}"></script>
+    <script src="{% static 'Bootstrap4.6.0/bootstrap.js' %}"></script>
+    <script src="{% static 'JS/tableExport.min.js' %}"></script>
+    <script src="{% static 'BootstrapTable/bootstrap-table.js' %}"></script>
+    <script src="{% static 'BootstrapTable/bootstrap-table-export.js' %}"></script>
+</head>
+<body>
+{% include 'test/navbar.html' %}
+{% block body %}
+
+{% endblock %}
+
+
+</body>
+</html>
